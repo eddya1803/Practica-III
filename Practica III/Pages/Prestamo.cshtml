@@ -1,0 +1,30 @@
+﻿@page
+@model Practica_III.Pages.PrestamoModel
+@{
+
+
+}
+
+<h1 class="text-center"> Calcular cuotas prestamo</h1>
+<br />
+
+<div>
+
+    <form>
+
+        <label>Monto prestamo:</label>
+        <input type="text" name="monto" class="form-control" />
+        <label>Cantidad cuotas:</label>
+        <input type="text" name="cantidadcuotas" class="form-control" />
+        <label>Interes anual :</label>
+        <input type="text" name="interesanual" class="form-control" /> 
+        <br />
+        <input type="submit" value="Calcular" class="btn btn-primary my-2" />
+
+    </form>
+    <br />
+    <p>
+        CUOTA MENSUAL ===> @Model.CuotaMensual
+    </p>
+
+</div>
