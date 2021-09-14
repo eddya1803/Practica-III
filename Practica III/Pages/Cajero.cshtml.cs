@@ -63,12 +63,11 @@ namespace Practica_III.Pages
                         }
                         else
                         {
-                            if (Solicitado >= 1000 && Mil > 0)
+                            if (Solicitado >= 1000)
                             {
 
                                 CantidadMil = Solicitado / 1000;
                                 restoMil = Solicitado % 1000;
-                                Mil = Mil - CantidadMil;
                                 Disponible = Disponible - (CantidadMil * 1000);
 
                             }
@@ -77,12 +76,11 @@ namespace Practica_III.Pages
                                 restoMil = Solicitado;
                             }
 
-                            if (restoMil >= 500 && Quinientos >= restoMil)
+                            if (restoMil >= 500)
                             {
 
                                 CantidadQuinientos = restoMil / 500;
                                 restoQuinientos = restoMil % 500;
-                                Quinientos = Quinientos - CantidadQuinientos;
                                 Disponible = Disponible - (CantidadQuinientos * 500);
 
                             }
@@ -91,15 +89,16 @@ namespace Practica_III.Pages
                                 restoQuinientos = restoMil;
                             }
 
-                            if (restoQuinientos > 100 && Cien >= restoQuinientos)
+                            if (restoQuinientos > 100)
                             {
 
-                                CantidadCien = restoMil / 100;
-                                Cien = Cien - CantidadCien;
+                                CantidadCien = restoQuinientos / 100;
                                 Disponible = Disponible - (CantidadCien * 100);
 
                             }
+
                             Mensaje = "Retiro Realizado";
+                            Continuar = true;
 
                         };
 
@@ -116,12 +115,11 @@ namespace Practica_III.Pages
                         }
                         else
                         {
-                            if (Solicitado >= 1000 && Mil > 0)
+                            if (Solicitado >= 1000)
                             {
 
                                 CantidadMil = Solicitado / 1000;
                                 restoMil = Solicitado % 1000;
-                                Mil = Mil - CantidadMil;
                                 Disponible = Disponible - (CantidadMil * 1000);
 
                             }
@@ -130,13 +128,12 @@ namespace Practica_III.Pages
                                 restoMil = Solicitado;
                             }
 
-                            if (restoMil >= 500 && Quinientos >= restoMil)
+                            if (restoMil >= 500)
                             {
 
                                 CantidadQuinientos = restoMil / 500;
                                 restoQuinientos = restoMil % 500;
-                                Quinientos = Quinientos - CantidadQuinientos;
-                                Disponible = Disponible - (CantidadQuinientos * 500); 
+                                Disponible = Disponible - (CantidadQuinientos * 500);
 
                             }
                             else
@@ -144,15 +141,16 @@ namespace Practica_III.Pages
                                 restoQuinientos = restoMil;
                             }
 
-                            if (restoQuinientos >= 100 && Cien >= restoQuinientos)
+                            if (restoQuinientos >= 100)
                             {
 
-                                CantidadCien = restoMil / 100;
-                                Cien = Cien - CantidadCien;
+                                CantidadCien = restoQuinientos / 100;
                                 Disponible = Disponible - (CantidadCien * 100);
 
                             }
+
                             Mensaje = "Retiro Realizado";
+                            Continuar = true;
 
                         }
 
@@ -164,7 +162,11 @@ namespace Practica_III.Pages
                     Mensaje = "Cantidad NO puede ser dispensada";
                     Continuar = true;
                 }
-                               
+
+                Mil = Mil - CantidadMil;
+                Quinientos = Quinientos - CantidadQuinientos;
+                Cien = Cien - CantidadCien;
+
             } while (Continuar == false);
 
         }
