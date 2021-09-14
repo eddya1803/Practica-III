@@ -23,14 +23,15 @@ namespace Practica_III.Pages
        
         public void OnGet(double monto, int cantidadcuotas, double interesanual)
         {
-
-          //CuotaMensual = 0;
+                      
             Monto = monto;
             CantidadCuotas = cantidadcuotas;
             double InteresMensual = interesanual / 12;
 
             CuotaMensual = (Monto *InteresMensual) / (1 - Math.Pow(1 + InteresMensual, - CantidadCuotas));
             CuotaMensual = Math.Round(CuotaMensual, 2);
+
         }
+
     }
 }

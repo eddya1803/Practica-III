@@ -1,4 +1,37 @@
 ﻿@page
 @model Practica_III.Pages.CajeroModel
 @{
+
 }
+
+<h1 class="text-center"> CAJERO AUTOMATICO</h1>
+
+<form method="get">
+    <label>Selecione el banco para retirar:</label>
+    <select name="nombrebanco" class="form-control">
+
+        <option value="ABC">ABC</option>
+        <option value="Banreserva">Banreserva</option>
+        <option value="Popular">Popular</option>
+        <option value="BHD">BHD</option>
+        <option value="Scotiabank">Scotiabank</option>
+
+    </select>
+
+    <input type="text" placeholder="Ingrese monto:" name="solicitado" class="form-control" />
+    <br />
+    <input type="submit" name="Retirar" class="btn btn-info" value="Retirar" />
+    <br />
+</form>
+
+<p>Distribucion de billetes:</p>
+<p> De mil:         @Model.CantidadMil</p>
+<p> De quinientos:  @Model.CantidadQuinientos</p>
+<p> De cien:        @Model.CantidadCien</p>
+
+<div class="alert alert-success" role="alert">
+    <p>@Model.Mensaje</p>
+</div>
+
+<p>Monto total retirado ==> @Model.Solicitado</p>
+<input type="button" name="continuar" class="btn btn-primary form-control" value="Continuar" />
